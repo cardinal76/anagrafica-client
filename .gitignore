@@ -7,3 +7,6 @@ target
 .settings/
 .project
 .sts4-cache/
+/.editorconfig
+/.browserslistrc
+/e2e/

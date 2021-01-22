@@ -1,0 +1,35 @@
+<div class="mb-24" fxLayout="row" fxLayoutAlign="space-between center">
+  <span class="h2">Add&nbsp;Asset</span>
+</div>
+<mat-tab-group [dynamicHeight]="false" class="w-100-p">
+  <mat-tab label="General">
+
+    <div [formGroup]="registryForm" fxLayout="column" class="content p-24 w-100-p">
+      <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+        <mat-form-field>
+          <input matInput placeholder="Registry name" formControlName="name"/>
+          <mat-error >
+                  errore name
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+        <mat-form-field>
+          <input matInput placeholder="Registry surname" formControlName="surname"/>
+          <mat-error >
+            errore surname
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+    </div>
+
+
+  </mat-tab>
+</mat-tab-group>
+<div class="mb-16">
+  <button mat-raised-button color="accent" type="submit" class="mr-4" (click)="submit()">
+    Save
+  </button>
+  <a mat-button routerLink="/asset" routerLinkActive="active">Cancel</a>
+</div>
