@@ -10,3 +10,5 @@ target
 /.editorconfig
 /.browserslistrc
 /e2e/
+/dist/anagrafica-client/
+/node_modules/
