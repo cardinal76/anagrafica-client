@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Registry} from '../model/Registry';
 
 @Injectable()
 export class DataAccessService {
@@ -37,7 +36,7 @@ export class DataAccessService {
   private setHeaders() {
     this.headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Accept': 'application/json'
+      'Accept': 'application/json',
     });
   }
 }
