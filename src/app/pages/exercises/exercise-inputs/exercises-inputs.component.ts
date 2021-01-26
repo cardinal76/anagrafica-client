@@ -3,6 +3,7 @@ import {Registry} from '../../../model/Registry';
 import {DataAccessService} from '../../../service/DataAccessService';
 import {Router} from '@angular/router';
 import {Subscription} from 'rxjs';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'ngx-exercises-inputs',
@@ -11,12 +12,17 @@ import {Subscription} from 'rxjs';
   providers: [DataAccessService],
 })
 export class ExercisesInputsComponent implements OnInit, OnDestroy {
+  @Input() registryForm: FormGroup;
   registry: Registry;
   private subscriptions: Subscription[] = [];
-  constructor(private dataAccessService: DataAccessService, private router: Router) {
+  constructor(private dataAccessService: DataAccessService, private router: Router, private formBuilder: FormBuilder) {
   }
 
   ngOnInit(): void {
+    this.registryForm = this.formBuilder.group({
+      name: ['', Validators.required],
+      surname: ['', Validators.required],
+    });
     this.registry = new Registry();
   }
 
@@ -25,6 +31,8 @@ export class ExercisesInputsComponent implements OnInit, OnDestroy {
   }
 
   submit() {
+    this.registry.name = this.registryForm.get('name').value;
+    this.registry.surname = this.registryForm.get('surname').value;
     this.subscriptions.push(
       this.dataAccessService.postGeneric(this.registry, 'insert')
         .subscribe(

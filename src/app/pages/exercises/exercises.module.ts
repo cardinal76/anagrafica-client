@@ -15,7 +15,10 @@ import { ThemeModule } from '../../@theme/theme.module';
 import { ExercisesRoutingModule } from './exercises-routing.module';
 import { ExercisesComponent } from './exercises.component';
 import { ExercisesInputsComponent } from './exercise-inputs/exercises-inputs.component';
-import { FormsModule as ngFormsModule } from '@angular/forms';
+import {FormsModule as ngFormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   imports: [
@@ -32,6 +35,10 @@ import { FormsModule as ngFormsModule } from '@angular/forms';
     NbSelectModule,
     NbIconModule,
     ngFormsModule,
+    MatTabsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
   ],
   declarations: [
     ExercisesComponent,
