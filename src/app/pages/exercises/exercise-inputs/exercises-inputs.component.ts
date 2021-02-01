@@ -1,7 +1,7 @@
 import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {Registry} from '../../../model/Registry';
 import {DataAccessService} from '../../../service/DataAccessService';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {Subscription} from 'rxjs';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
@@ -15,7 +15,8 @@ export class ExercisesInputsComponent implements OnInit, OnDestroy {
   @Input() registryForm: FormGroup;
   registry: Registry;
   private subscriptions: Subscription[] = [];
-  constructor(private dataAccessService: DataAccessService, private router: Router, private formBuilder: FormBuilder) {
+  constructor(private dataAccessService: DataAccessService, private router: Router, private formBuilder: FormBuilder,
+              private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
@@ -36,8 +37,9 @@ export class ExercisesInputsComponent implements OnInit, OnDestroy {
     this.subscriptions.push(
       this.dataAccessService.postGeneric(this.registry, 'insert')
         .subscribe(
-          () => this.router.navigate(['/list']),
+          () => this.router.navigate(['../list'], { relativeTo: this.route }),
         ),
     );
   }
+
 }

@@ -1,6 +1,6 @@
 {
-  "/registry": {
-    "target": "http://localhost:8181",
+  "/registryttttttt": {
+    "target": "http://localhost:8282",
     "secure": false,
     "changeOrigin": true
   }

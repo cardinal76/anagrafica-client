@@ -13,7 +13,7 @@
           "options": {
             "aot": true,
             "preserveSymlinks": true,
-            "outputPath": "dist",
+            "outputPath": "C:\\xampp2\\htdocs\\dist",
             "index": "src/index.html",
             "main": "src/main.ts",
             "tsConfig": "src/tsconfig.app.json",
@@ -66,7 +66,7 @@
               "budgets": [
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "6kb"
+                  "maximumWarning": "2mb"
                 }
               ],
               "optimization": true,

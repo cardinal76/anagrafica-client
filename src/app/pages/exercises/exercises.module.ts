@@ -7,7 +7,7 @@ import {
   NbDatepickerModule, NbIconModule,
   NbInputModule,
   NbRadioModule,
-  NbSelectModule,
+  NbSelectModule, NbTreeGridModule,
   NbUserModule,
 } from '@nebular/theme';
 
@@ -19,6 +19,8 @@ import {FormsModule as ngFormsModule, ReactiveFormsModule} from '@angular/forms'
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import {ExercisesListComponent} from './exercise-list/exercises-list.component';
+import {Ng2SmartTableModule} from 'ng2-smart-table';
 
 @NgModule({
   imports: [
@@ -39,10 +41,13 @@ import {MatInputModule} from '@angular/material/input';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
+    NbTreeGridModule,
+    Ng2SmartTableModule,
   ],
   declarations: [
     ExercisesComponent,
     ExercisesInputsComponent,
+    ExercisesListComponent,
   ],
 })
 export class ExercisesModule { }
